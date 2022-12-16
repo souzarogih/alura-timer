@@ -1,4 +1,6 @@
 const { app, BrowserWindow, ipcMain } = require('electron');
+const { segundosParaTempo } = require('./app/js/timer');
+const data = require('./data');
 
 app.on('ready', () => {
   console.log('Aplicacao iniciada');
@@ -20,7 +22,7 @@ ipcMain.on('abrir-janela-sobre', () => {
   if (sobreWindow == null) {
     sobreWindow = new BrowserWindow({
       width: 300,
-      height: 200,
+      height: 250,
       alwaysOnTop: true,
       frame: false,
     });
@@ -33,4 +35,9 @@ ipcMain.on('abrir-janela-sobre', () => {
 
 ipcMain.on('fechar-janela-sobre', () => {
   sobreWindow.close();
+});
+
+ipcMain.on('curso-parado', (event, curso, tempoEstudado) => {
+  console.log();
+  data.SalvaDados(curso, tempoEstudado);
 });
