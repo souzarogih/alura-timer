@@ -18,6 +18,22 @@
 
 `$ npm start or yarn start`
 
+## Gerar um pacote para executar
+`npm install electron-packager -g`
+
+### Gerar pacote tradiconal
+electron-packager alura-timer alura-timer --plataform=win32 --arch=x64
+
+### Gerar pacote com icone
+electron-packager alura-timer alura-timer --plataform=win32 --arch=x64 --icon=icon/favicon.ico
+icon\favicon.ico
+### Tabela
+| SO  | Sintaxe |
+| --------| ------------- |
+| Mac   | plataform=darvin |
+| Windows | plataform=win32|
+| Linux | plataform=linux|
+
 ## License
 
 > Enviar um e-mail para _higor.andrade@hotmail.com_ com o nome do projeto no título do

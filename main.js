@@ -38,7 +38,8 @@ app.on('ready', () => {
     { label: 'Photoshop', type: 'radio' },
     { label: 'Java', type: 'radio' },*/
   
-  mainWindow.openDevTools()
+  // Exibir o development tools
+  //mainWindow.openDevTools()
 
   //abrir sites na janela do programa
   mainWindow.loadURL(`file://${__dirname}/app/index.html`);
