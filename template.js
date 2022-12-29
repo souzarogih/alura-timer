@@ -44,6 +44,28 @@ module.exports = {
   },
   geraMenuPrincipalTemplate(app){
     let templateMenu = [{
+      label: 'View',
+      submenu: [
+        {
+          role: 'reload'
+        },
+        {
+          role: 'toggledevtools'
+        },
+      ]
+    },
+    {
+      label: 'Window',
+      submenu: [
+        {
+          role: 'minimize'
+        },
+        {
+          role: 'close'
+        },
+      ]
+    },
+      {
       label: 'Sobre' ,
       submenu: [
         {
