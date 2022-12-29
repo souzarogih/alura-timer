@@ -58,7 +58,7 @@ ipcMain.on('fechar-janela-sobre', () => {
 });
 
 ipcMain.on('curso-parado', (event, curso, tempoEstudado) => {
-  console.log();
+  console.log(`O curso ${curso} foi estudado por ${tempoEstudado}`);
   data.SalvaDados(curso, tempoEstudado);
 });
 
