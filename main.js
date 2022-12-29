@@ -1,4 +1,4 @@
-const { app, BrowserWindow, ipcMain, Tray, Menu } = require('electron');
+const { app, BrowserWindow, ipcMain, Tray, Menu, globalShortcut} = require('electron');
 const { segundosParaTempo } = require('./app/js/timer');
 const data = require('./data');
 const templateGenerator = require('./template');
@@ -22,7 +22,18 @@ app.on('ready', () => {
   let menuPrincipal = Menu.buildFromTemplate(templateMenu);
   Menu.setApplicationMenu(menuPrincipal);
 
-  /*{ label: '', type: 'separator' },
+  globalShortcut.register("CmdOrCtrl+Shift+S", () => {
+    mainWindow.send('atalho-iniciar-parar')
+  })
+
+
+
+  /*
+  globalShortcut.register("CmdOrCtrl+Shift+S", () => {
+    console.log('Atalho executado!!!')
+  })
+
+  { label: '', type: 'separator' },
     { label: 'JavaScript', type: 'radio' },
     { label: 'Photoshop', type: 'radio' },
     { label: 'Java', type: 'radio' },*/
@@ -67,3 +78,4 @@ ipcMain.on('curso-adicionado', (event, novoCurso) => {
   let novoTrayMenu = Menu.buildFromTemplate(novoTemplate);
   tray.setContextMenu(novoTrayMenu);
 });
+
