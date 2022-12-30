@@ -25,8 +25,11 @@
 electron-packager alura-timer alura-timer --plataform=win32 --arch=x64
 
 ### Gerar pacote com icone
-electron-packager alura-timer alura-timer --plataform=win32 --arch=x64 --icon=icon/favicon.ico
-icon\favicon.ico
+electron-packager alura-timer alura-timer --plataform=win32 --arch=x64 --icon=icon/favicon.ico icon\favicon.ico
+
+### Empacotando para os 3 SOs
+electron-packager alura-timer alura-timer --plataform=darwin,linux,win32 --arch=x64 --icon=icon/favicon
+
 ### Tabela
 | SO  | Sintaxe |
 | --------| ------------- |
